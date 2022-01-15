@@ -3,7 +3,7 @@ import { useState } from "react";
 import Header from "./components/header";
 import TodoItem from "./components/todoitem";
 import AddTodo from "./components/addtodo";
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import { StyleSheet, Text, View, FlatList, Alert } from "react-native";
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -19,9 +19,30 @@ export default function App() {
   };
 
   const submitHandler = (text) => {
-    setTodos((prevTodos) => {
-      return [{ text: text, key: Math.random().toString() }, ...prevTodos];
-    });
+    if (text.length > 3) {
+      setTodos((prevTodos) => {
+        return [{ text: text, key: Math.random().toString() }, ...prevTodos];
+      });
+    } else {
+      Alert.alert(
+        "OOPS!",
+        "Please input a string consists of more than 3 characters.",
+        [
+          {
+            text: "Understood",
+            onPress: () => {
+              console.log("alart closed");
+            },
+          },
+          {
+            text: "Not Understood",
+            onPress: () => {
+              console.log("Does not understand.");
+            },
+          },
+        ]
+      );
+    }
   };
 
   return (
