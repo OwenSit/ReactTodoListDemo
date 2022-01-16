@@ -22,8 +22,8 @@ export default function App() {
     { text: "play on the switch", key: "3" },
   ]);
 
-  const pressHandler = (key) => {
-    Alert.alert("DELETE?", "This is an irreversible operation.", [
+  const pressHandler = (text, key) => {
+    Alert.alert("Confirm", `Are you sure to delete "${text}"?`, [
       {
         text: "Yes",
         onPress: () => {

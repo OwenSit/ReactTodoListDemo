@@ -11,7 +11,7 @@ export default function TodoItem({ item, pressHandler }) {
         name="delete"
         size={40}
         color="green"
-        onPress={() => pressHandler(item.key)}
+        onPress={() => pressHandler(item.text, item.key)}
       />
       <Text style={styles.itemText}>{item.text}</Text>
     </View>
