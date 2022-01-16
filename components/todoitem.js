@@ -4,17 +4,18 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 export default function TodoItem({ item, pressHandler }) {
   return (
-    <TouchableOpacity onPress={() => pressHandler(item.key)}>
-      <View style={styles.item}>
-        <MaterialIcons
-          style={styles.itemIcon}
-          name="delete"
-          size={40}
-          color="black"
-        />
-        <Text style={styles.itemText}>{item.text}</Text>
-      </View>
-    </TouchableOpacity>
+    // <TouchableOpacity onPress={() => pressHandler(item.key)}>
+    <View style={styles.item}>
+      <MaterialIcons
+        style={styles.itemIcon}
+        name="delete"
+        size={40}
+        color="green"
+        onPress={() => pressHandler(item.key)}
+      />
+      <Text style={styles.itemText}>{item.text}</Text>
+    </View>
+    // </TouchableOpacity>
   );
 }
 
@@ -34,8 +35,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
     flex: 3,
-  },
-  itemIcon: {
-    color: "red",
   },
 });

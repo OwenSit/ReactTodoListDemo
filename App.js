@@ -23,9 +23,19 @@ export default function App() {
   ]);
 
   const pressHandler = (key) => {
-    setTodos((prevTodos) => {
-      return prevTodos.filter((todo) => todo.key != key);
-    });
+    Alert.alert("DELETE?", "This is an irreversible operation.", [
+      {
+        text: "Yes",
+        onPress: () => {
+          setTodos((prevTodos) => {
+            return prevTodos.filter((todo) => todo.key != key);
+          });
+        },
+      },
+      {
+        text: "No",
+      },
+    ]);
   };
 
   const submitHandler = (text) => {
