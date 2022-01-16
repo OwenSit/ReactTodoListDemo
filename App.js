@@ -4,6 +4,7 @@ import Sandbox from "./components/sandbox";
 import Header from "./components/header";
 import TodoItem from "./components/todoitem";
 import AddTodo from "./components/addtodo";
+
 import {
   StyleSheet,
   Text,
@@ -44,7 +45,7 @@ export default function App() {
             },
           },
           {
-            text: "Not Understood",
+            text: "Did not Understand",
             onPress: () => {
               console.log("Does not understand.");
             },
