@@ -23,7 +23,7 @@ export default function App() {
   ]);
 
   const pressHandler = (text, key) => {
-    Alert.alert("Confirm", `Are you sure to delete "${text}"?`, [
+    Alert.alert("Warning 💀", `Are you sure to delete "${text}"?`, [
       {
         text: "Yes",
         onPress: () => {
